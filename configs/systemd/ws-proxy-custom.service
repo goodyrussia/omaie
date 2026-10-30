@@ -1,0 +1,11 @@
+[Unit]
+Description=Python WS Proxy for SSH
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/ws-proxy.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

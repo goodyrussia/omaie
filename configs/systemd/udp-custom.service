@@ -1,0 +1,15 @@
+[Unit]
+Description=Real UDP Custom (1-65535) for NetMod/ePro
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/etc/udp-custom
+ExecStart=/usr/bin/udp-custom server
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
